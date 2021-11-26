@@ -1,9 +1,9 @@
 import { model, Schema } from "mongoose";
 import { CustoSchemaType } from "../types/Custo.type";
 import { PlanejamentoSchemaType } from "../types/Planejamento.type";
-import Servico from "../types/Servico.type";
+import Orcamento from "../types/Orcamento.type";
 
-const ServicoSchema = new Schema<Servico>(
+const OrcamentoSchema = new Schema<Orcamento>(
     {
         idbuilding : {type: String, required:true},
         descricao : {type: String, required:true},
@@ -13,5 +13,5 @@ const ServicoSchema = new Schema<Servico>(
     }
 )
 
-const ServicoModel = model<Servico>('Servico', ServicoSchema, '_servicos')
-export default ServicoModel
+const OrcamentoModel = model<Orcamento>('Orcamento', OrcamentoSchema, '_orcamentos')
+export default OrcamentoModel

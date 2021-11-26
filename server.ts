@@ -1,8 +1,9 @@
 import EmpreendimentoRouter from "./routes/Empreendimento.router"
 import InsumoRouter from "./routes/Insumo.router"
 import ObjetoBIMRouter from "./routes/ObjetoBIM.router"
-import QuantitativoRouter from "./routes/Quantitativo.router"
-import ServicoRouter from "./routes/Servico.router"
+import OrcamentoRouter from "./routes/Orcamento.router"
+import PlanejamentoRouter from "./routes/Planejamento.router"
+import QuantitativoRouter from './routes/Quantitativo.router'
 
 const express = require('express')
 const cors = require('cors')
@@ -16,9 +17,10 @@ const port = process.env.port || 5000;
 app.use((cors()))
 app.use(express.json({limit : '5mb'}))
 
+app.use('/planejamento', PlanejamentoRouter)
 app.use('/insumos', InsumoRouter)
 app.use('/quantitativos', QuantitativoRouter)
-app.use('/servicos', ServicoRouter)
+app.use('/orcamentos', OrcamentoRouter)
 app.use('/empreendimentos', EmpreendimentoRouter)
 app.use('/objetosBIM', ObjetoBIMRouter)
 
